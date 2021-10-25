@@ -1,0 +1,18 @@
+@startuml
+actor Usuario
+boundary Controller
+boundary Services
+boundary Repositories
+boundary Entities
+database BD
+Usuario --> Controller: Crear
+Controller --> Services: Create(Object)
+Services --> Repositories: Save(Object)
+Repositories --> Entities: Save(Object)
+Entities --> BD: QueryCreate(Object)
+BD --> Entities: ResponseCreate
+Entities --> Repositories: ResponseCreate
+Repositories --> Services: ResponseCreate
+Services --> Controller: ResponseCreate
+Controller --> Usuario: RespuestaCreacion
+@enduml

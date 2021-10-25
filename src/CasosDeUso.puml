@@ -1,0 +1,16 @@
+@startuml
+left to right direction
+actor Cliente as c
+actor "Empleado de sucursal" as e
+package "Cajero Automatico" {
+    usecase "Retirar dinero" as rd
+    usecase "Cambiar Pin" as cp
+    usecase "Obtener ultimos movimientos y saldos" as ms
+    usecase "Agregar billetes" as ab
+}
+
+c --> rd
+c --> cp
+c --> ms
+e --> ab
+@enduml
